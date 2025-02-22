@@ -1,6 +1,17 @@
 {
-  "name": "anime-video",
+  "name": "vercel-random-video-api",
   "version": "1.0.0",
-  "type": "module",
-  "dependencies": {}
+  "description": "A simple API to return a random video URL, hosted on Vercel.",
+  "main": "api/random-video.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel start",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16"
+  }
 }
