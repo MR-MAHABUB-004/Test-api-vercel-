@@ -1,10 +1,12 @@
+/**
+ * Random Anime Video API
+ * Author: Your Name
+ */
+
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
 app.use(cors());
 
 const animeVideos = [
@@ -14,17 +16,12 @@ const animeVideos = [
   // Add more anime video links
 ];
 
-app.get("/video", async (req, res) => {
-  try {
-    const randomVideo = animeVideos[Math.floor(Math.random() * animeVideos.length)];
-    res.json({ video: randomVideo });
-  } catch (error) {
-    res.status(500).json({ error: "Something went wrong!" });
-  }
+const authorName = "Your Name"; // Replace with your actual name
+
+app.get("/video", (req, res) => {
+  const randomVideo = animeVideos[Math.floor(Math.random() * animeVideos.length)];
+  res.json({ author: authorName, video: randomVideo });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
+// Export the app for Vercel (IMPORTANT)
 module.exports = app;
