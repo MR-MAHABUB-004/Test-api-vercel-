@@ -3,7 +3,7 @@
  * Author: Your Name
  */
 
-module.exports = async (req, res) => {
+export default function handler(req, res) {
   const animeVideos = [
     "https://example.com/video1.mp4",
     "https://example.com/video2.mp4",
@@ -16,4 +16,4 @@ module.exports = async (req, res) => {
   const randomVideo = animeVideos[Math.floor(Math.random() * animeVideos.length)];
 
   res.status(200).json({ author: authorName, video: randomVideo });
-};
+}
